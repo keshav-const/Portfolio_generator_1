@@ -26,7 +26,7 @@ const LivePreview: React.FC<LivePreviewProps> = ({
     setIsDownloading(true);
     try {
       // Check if server is running first
-      const healthCheck = await fetch('http://localhost:3001/api/preview', {
+      const healthCheck = await fetch('https://portfolio-generator-1-pvg2.onrender.com/api/preview', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const LivePreview: React.FC<LivePreviewProps> = ({
         formData.append('resume', portfolioData.resume);
       }
 
-      const response = await fetch('http://localhost:3001/api/download', {
+      const response = await fetch('https://portfolio-generator-1-pvg2.onrender.com/api/download', {
         method: 'POST',
         body: formData,
       });
